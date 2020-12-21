@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Fingerprint Test</title>
+  <meta name="description" content="Fingerprint Test">
+  <meta name="author" content="Mark Edwards">
+
+	<script>
+	  function initFingerprintJS() {
+	    FingerprintJS.load().then(fp => {
+	      // The FingerprintJS agent is ready.
+	      // Get a visitor identifier when you'd like to.
+	      fp.get().then(result => {
+	        // This is the visitor identifier:
+	        const visitorId = result.visitorId;
+	        console.log(visitorId);
+	      });
+	    });
+	  }
+	</script>
+	<script
+	  async
+	  src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"
+	  onload="initFingerprintJS()"
+	></script>
+
+</head>
+
+<body>
+  <div>Fingerprint Test</div>
+</body>
+</html>
